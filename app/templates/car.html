@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+{% extends 'basic.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+{% block body %}
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header">
+        <h1 class="display-3 text-uppercase text-white mb-3">Car Listing</h1>
+        <div class="d-inline-flex text-white">
+            <h6 class="text-uppercase m-0"><a class="text-white" href="">Home</a></h6>
+            <h6 class="text-body m-0 px-3">/</h6>
+            <h6 class="text-uppercase text-body m-0">Car Listing</h6>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+
+<!-- Button trigger modal -->
+<!-- Button to Open the Modal -->
+
+
+    <!-- Rent A Car Start -->
+    <div class="container-fluid ">
+        <div class="container pb-3">
+            <h1 class="display-4 text-uppercase text-center mb-5">Find Your Car</h1>
+
+                <form method="post" action="{% url 'search' %}">{% csrf_token %}
+                    <div class="input-group justify-content-center mb-5" style="margin-top: 30px;">
+
+      <div class="">
+        <input type="search" id="form1" name="search" placeholder="Search" class="form-control" />
+      </div>
+
+
+      <button type="submit" class="btn btn-primary">
+        <i class="fas fa-search"></i>
+      </button>
+
+
+</div>
+</form>
+
+            <div class="row">
+                {% for pro in cars %}
+                <div class="col-4 mb-2">
+                    <div class="rent-item mb-4">
+                        <img class="img-fluid mb-4" src="{{ pro.img.url }}" alt="" style="min-height: 194px;max-height: 194px;">
+                        <div class="text-uppercase mb-4" style="font-size: 10px;" id="namepr{{ pro.id }}"><a id="namepr{{ pro.id }}"> {{ pro.name }}</a></div>
+
+                        <div class="d-flex justify-content-center mb-4">
+                            <div class="px-2">
+                                <i class="fa fa-car text-primary mr-1"></i>
+                                <span>{{ pro.model_year }}</span>
+                            </div>
+                            <div class="px-2 border-left border-right">
+                                <i class="fa fa-cogs text-primary mr-1"></i>
+                                <span>{{ pro.features }}</span>
+                            </div>
+                            <div class="px-2">
+                                <i class="fa fa-road text-primary mr-1"></i>
+                                <span>{{ pro.travel }}</span>
+                            </div>
+                        </div>
+                        <div class="destination_price mt-1">
+
+                                    <h5>
+                                    ₹<span id="pricepr{{ pro.id }}">{{ pro.price }}/day</span>
+                                        </h5>
+                                    <div class="row justify-content-center">
+                                    <a href="/car/{{ pro.id }}" class="text-center" ><button id="" class="btn btn-primary ">Book Now</button></a>
+
+                                    </div>
+                                </div>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+
+
+        </div>
+    </div>
+    <!-- Rent A Car End -->
+<div class="col-12 pb-1">
+                        <nav aria-label="Page navigation">
+                          <ul class="pagination justify-content-center mb-3">
+                              {% if cars.has_previous %}
+                            <li class="page-item">
+                              <a class="page-link" href="?page={{ cars.previous_page_number }}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                            </li>
+                              {% endif %}
+                            <li class="page-item active"><a class="page-link" href="#">{{ cars.number }}</a></li>
+
+                              <li class="page-item">
+                                  {% if cars.has_next %}
+                              <a class="page-link" href="?page={{ cars.next_page_number }}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                            </li>
+                          {% endif %}
+                          </ul>
+
+
+
+                        </nav>
+                    </div>
+
+
+
+
+
+
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+{% endblock %}
+
+
+
+{% block js %}
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+</body>
+
+</html>

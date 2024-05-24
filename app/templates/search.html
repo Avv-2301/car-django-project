@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% extends 'basic.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+
+
+</head>
+<body>
+{% block body %}
+{% if search %}
+    <h1 class="text-center mt-2">You Search For {{ search }}</h1><br>
+
+        <form method="post" action="{% url 'search' %}">{% csrf_token %}
+<div class="input-group justify-content-center mb-3" >
+
+      <div class="">
+        <input type="search" id="form1" name="search" placeholder="Search" class="form-control" />
+      </div>
+
+
+      <button type="submit" class="btn btn-primary">
+        <i class="fas fa-search"></i>
+      </button>
+
+
+</div>
+</form>
+
+    {% for product in product %}
+
+
+
+
+<div class="container border border-primary border-3">
+<div class="row">
+
+    <div class="col-4 text-center">
+        <img src="/media/{{ product.img }}" class="thumbnail mt-2 mb-2"  width="100%">
+    </div>
+
+    <div class="col-3 mt-4">
+        <ul>
+
+                        {% if product.offer %}
+                            <li class=""><b>Special Offer</b></li>
+                            {% else %}
+                                <li class="">No Special Offer</li>
+                                {% endif %}
+
+					<li><span>Rs.{{ product.price }}/Day</span></li>
+        </ul>
+    </div>
+
+    <div class="col-5 mt-4">
+        <h3><a href="/car/{{ product.id }}" title="">{{ product }}</a></h3>
+				<p>{{ product.desc|slice:"0:300" }}...</p>
+    </div>
+
+</div>
+</div>
+<br>
+    {% endfor %}
+
+    {% else %}
+        <h1>hey! you forget to search</h1>
+
+{% endif %}
+
+
+
+
+
+{%  endblock %}
+</body>
+</html>

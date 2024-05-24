@@ -1,0 +1,96 @@
+{% extends 'basic.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    {% block css %}
+
+        <style>
+        .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  margin: auto;
+
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+
+
+.social {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+        </style>
+
+{% endblock %}
+
+</head>
+<body>
+{% block body %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div style="text-align: center;font-family: 'Times New Roman', serif;">
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" fill="currentColor" class="bi bi-person-circle my-2" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+</svg>
+    <h1 class="my-2">Account Details</h1>
+</div>
+<div class="card col-8" >
+
+<div class="row my-3" style="font-family: 'Times New Roman', serif;" >
+
+    <div class="col-4">
+    <p class="my-2 mx-5">Full name :</p>
+    </div>
+    <h1 class="col-4">{{ user.first_name }}
+    {{ user.last_name}}</h1>
+</div>
+
+<div class="row my-1 mt-n2 " style="font-family: 'Times New Roman', serif;">
+    <div class="col-4">
+    <p class="my-2 mx-5">Email :</p>
+    </div>
+    <p class="title col-4">{{ user.email }}</p>
+</div>
+
+<div class="row my-1 mt-n2 " style="font-family: 'Times New Roman', serif;">
+    <div class="col-4">
+    <p class="my-2 mx-5">Username :</p>
+    </div>
+    <p class="col-4">{{ user.username }}</p></div>
+
+    <div class="row my-1 mt-n2 " style="font-family: 'Times New Roman', serif;">
+    <div class="col-4">
+    <p class="my-2 mx-5">Last Login :</p>
+    </div>
+    <p class="col-4">{{ user.last_login }}</p></div>
+
+    <div class="row my-1 mt-n2 " style="font-family: 'Times New Roman', serif;">
+    <div class="col-4">
+    <p class="my-2 mx-5">Date Joined :</p>
+    </div>
+    <p class="col-4">{{ user.date_joined }}</p></div>
+
+
+
+    <div class="social my-2" style="text-align: center">
+  <a href="#"><i class="fa fa-dribbble"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-linkedin"></i></a>
+  <a href="#"><i class="fa fa-facebook"></i></a>
+  </div>
+</div>
+{% endblock %}
+<h5>
+    help
+</h5>
+</body>
+</html>

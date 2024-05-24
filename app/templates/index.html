@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+{% extends 'basic.html' %}
+{% load static %}
+<html lang="en">
+<body>
+ {% block body %}
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0" style="margin-bottom: 90px; ">
+        <div id="header-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="{% static 'Mahindra alturas G4.jpg'%}" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-md-3">Rent A Car</h4>
+                            <h1 class="display-1 text-white mb-md-4">Best Rental Cars In Your Location</h1>
+                            <a href="/car" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserve Now</a>
+                        </div>
+                    </div>
+                </div>
+                {% for label in label %}
+                <div class="carousel-item">
+                    <img class=""  src="{{ label.img.url }}" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-md-3">Rent A Car</h4>
+                            <h1 class="display-1 text-white mb-md-4">{{ label.name }}</h1>
+                            <a href="/car" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserve Now</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                   <span class="carousel-control-prev-icon mb-n2"></span>
+                </div>
+            </a>
+            <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                    <span class="carousel-control-next-icon mb-n2"></span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <h1 class="display-1 text-primary text-center">01</h1>
+            <h1 class="display-4 text-uppercase text-center mb-5">Welcome To <span class="text-primary">Royal Cars</span></h1>
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <img class="w-75 mb-4" src="{% static 'img/about.png'%}" alt="">
+                    <p>Royal car offers affordable, flexible and convenient car rentals. It not only offers a wide fleet of cars and hourly rentals but also offers you unlimited kilometre packages which won’t stop you to travel endlessly and worrying you with the limits for the day. Also, you can cross state borders or cities, as Revv has All India Tourist Permit equipped in all its cars to make your travel hassle-free. So just rent a car and Happy Revving!</p>
+                </div>
+            </div>
+
+    <!-- About End -->
+    
+   <!-- Services Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <h1 class="display-4 text-uppercase text-center mb-5">Our Services</h1>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-2">
+                    <div class="service-item d-flex flex-column justify-content-center px-4 mb-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div class="d-flex align-items-center justify-content-center bg-primary ml-n4" style="width: 80px; height: 80px;">
+                                <i class="fa fa-2x fa-taxi text-secondary"></i>
+                            </div>
+                            <h1 class="display-2 text-white mt-n2 m-0">01</h1>
+                        </div>
+                        <h4 class="text-uppercase mb-3">Car Rental</h4>
+                        <p class="m-0">A car rental, hire car or car hire agency is a company that rents automobiles for short periods of time to the public, generally ranging from a few hours to a few weeks. It is often organized with numerous local branches</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-2">
+                    <div class="service-item active d-flex flex-column justify-content-center px-4 mb-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div class="d-flex align-items-center justify-content-center bg-primary ml-n4" style="width: 80px; height: 80px;">
+                                <i class="fa fa-2x fa-money-check-alt text-secondary"></i>
+                            </div>
+                            <h1 class="display-2 text-white mt-n2 m-0">02</h1>
+                        </div>
+                        <h4 class="text-uppercase mb-3">Car Financing</h4>
+                        <p class="m-0">Auto financing, also known as car finance, car financing or auto finance, refers to the range of financial products available that allow people to acquire a car with any arrangement other than a full-cash single lump payment.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-2">
+                    <div class="service-item d-flex flex-column justify-content-center px-4 mb-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div class="d-flex align-items-center justify-content-center bg-primary ml-n4" style="width: 80px; height: 80px;">
+                                <i class="fa fa-2x fa-car text-secondary"></i>
+                            </div>
+                            <h1 class="display-2 text-white mt-n2 m-0">03</h1>
+                        </div>
+                        <h4 class="text-uppercase mb-3">Car Inspection</h4>
+                        <p class="m-0">car rental, a vehicle inspection is an act of checking the conditions of a rental car. Car rental companies inspect their vehicles before handing them over to a customer and also after the customer brings the car back.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-2">
+                    <div class="service-item d-flex flex-column justify-content-center px-4 mb-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div class="d-flex align-items-center justify-content-center bg-primary ml-n4" style="width: 80px; height: 80px;">
+                                <i class="fa fa-2x fa-cogs text-secondary"></i>
+                            </div>
+                            <h1 class="display-2 text-white mt-n2 m-0">04</h1>
+                        </div>
+                        <h4 class="text-uppercase mb-3">Auto Repairing</h4>
+                        <p class="m-0">An automobile repair shop (also known regionally as a garage or a workshop) is an establishment where automobiles are repaired by auto mechanics and technicians.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-2">
+                    <div class="service-item d-flex flex-column justify-content-center px-4 mb-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div class="d-flex align-items-center justify-content-center bg-primary ml-n4" style="width: 80px; height: 80px;">
+                                <i class="fa fa-2x fa-spray-can text-secondary"></i>
+                            </div>
+                            <h1 class="display-2 text-white mt-n2 m-0">05</h1>
+                        </div>
+                        <h4 class="text-uppercase mb-3">Auto Painting</h4>
+                        <p class="m-0">Automotive paint, unlike any other generic paint, is meant to be on the car’s body for its lifetime…well almost. Automotive paint is a very different kind of paint that is made as a compound mixture of certain products.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-2">
+                    <div class="service-item d-flex flex-column justify-content-center px-4 mb-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div class="d-flex align-items-center justify-content-center bg-primary ml-n4" style="width: 80px; height: 80px;">
+                                <i class="fa fa-2x fa-pump-soap text-secondary"></i>
+                            </div>
+                            <h1 class="display-2 text-white mt-n2 m-0">06</h1>
+                        </div>
+                        <h4 class="text-uppercase mb-3">Auto Cleaning</h4>
+                        <p class="m-0">Car detailers provide automotive interior and exterior cleaning services that meet company or client specifications. They handle everything from a simple wash and vacuum</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
+    <!-- Banner Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="bg-banner py-5 px-4 text-center">
+                <div class="py-5">
+                    <h1 class="display-1 text-uppercase text-primary mb-4">50% OFF</h1>
+                    <h1 class="text-uppercase text-light mb-4">Special Offer For New Members</h1>
+                    <p class="mb-4">Only for Sunday</p>
+                    <a class="btn btn-primary mt-2 py-3 px-5" href="/car">Register Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner End -->
+
+
+
+
+
+
+
+
+    <!-- Banner Start -->
+                <div class="col-lg-12 px-0 justify-content-center">
+                    <div class="px-5 bg-dark d-flex align-items-center justify-content-center" >
+                        <div class="text-left justify-content-center">
+                            <h3 class="text-uppercase text-light mb-3">Looking for a car?</h3>
+                            <a class="btn btn-primary py-2 px-4" href="/car">Start Now</a>
+                        </div>
+                        <img class="img-fluid flex-shrink-0 mr-n5 w-50 ml-4" src="{% static 'img/banner-right.png'%}" alt="">
+                    </div>
+                </div>
+
+    <!-- Banner End -->
+
+
+
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+ {% endblock %}
+ </div></div></body>
+
+</html>
